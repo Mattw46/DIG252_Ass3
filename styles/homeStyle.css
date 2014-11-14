@@ -14,50 +14,34 @@ body{
 /*
 	Start Temp
 */
-#menu {
+
+
+
+
+.tooltip {
 	width: 150px;
-	height: 550px;
 	background: grey;
-	z-index: 100;
-	position: fixed;/*position: absolute;*/
-	left: -150px;
-	top: 25px;
+	border: solid black 5px;
 }
 
-.menuIcon {
-	position: fixed;/*position: absolute;*/
-	top: 25px;
-	left: 35px;
-	/*z-index: 100;*/
-}
-
-/*.menu-icon-on {
-	position: absolute;
-	top: 10px;
-	left: 35px;
-}*/
-
-.menuItem {
-	display: block;
-	color: white;
-	padding-top: 25px;
-	padding-left: 35px;
-	text-decoration: none;
+.tooltip h6 {
 	font-size: 1.2em;
+	width: 80%;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
 }
 
-.menuClose {
-	position: absolute;
-	right: 15px;
-	color: white;
-}
-
-.menuClose:hover {
-	background: black;
-	padding: 5px;
+.tooltip p {
+	width: 80%;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
 }
 /* End Temp */
-p{
+p {
 	margin: 0 0 20px 0;	
 }
 

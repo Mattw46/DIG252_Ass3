@@ -9,6 +9,9 @@ body{
 	margin: 0;
 	min-width: 980px;
 	padding: 0;
+	font-family: Helvetica, Arial, sans-serif; /* Recommended for accessibility - http://webaim.org/techniques/fonts/*/
+	font-size: 1.2em; /* relative sizing is best - http://webaim.org/techniques/fonts/*/
+	background: black;
 }
 
 /*
@@ -21,11 +24,11 @@ body{
 .tooltip {
 	width: 150px;
 	background: grey;
-	border: solid black 5px;
+	border: solid black 2px;
 }
 
 .tooltip h6 {
-	font-size: 1.2em;
+	font-size: 0.9em;
 	width: 80%;
 	margin-top: 5px;
 	margin-left: auto;
@@ -34,6 +37,7 @@ body{
 }
 
 .tooltip p {
+	font-size: 0.9em;
 	width: 80%;
 	margin-top: 5px;
 	margin-left: auto;
@@ -76,7 +80,7 @@ h2{
 
 .float-left{
 	float: left;	
-	margin: 0 0 0 20px;
+	margin: 0 0 0 60px;
 }
 
 .float-right{
@@ -112,6 +116,29 @@ h2{
 	padding: 0;
 }
 
+#scrollIcon {
+	position: absolute; 
+	left: 680px; 
+	top: 510px; 
+	text-align: center;
+	display: inline-block;
+	font-size:	0.7em;
+}
+
+#scrollIcon a:link {
+	text-decoration: none;
+	color: white;
+}
+
+#scrollIcon a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+#scrollIcon p {
+	padding-top: 15px;
+}
+
 #second{
 	background: url(../images/secondBG.jpg) 50% 0 no-repeat fixed;
 	color: white;
@@ -121,21 +148,21 @@ h2{
 	padding: 0;
 }
 
-#second .bg{
-	background: url(../images/trainers.png) 50% 0 no-repeat fixed;
+/*#second .bg{
+	background: url(../images/trainers.png) 100% 0 no-repeat fixed;
 	height: 1300px;
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
 	width: 900px;
 	z-index: 200;
-}
+}*/
 
 #third{
 	background: #CCC; /*background: url(../images/thirdBG.jpg) 50% 0 no-repeat fixed;*/
 	color: white;
 	height: 650px;
-	padding: 100px 0 0 0;	
+	padding: 150px 0 0 0;	
 }
 
 /*#fifth{
@@ -152,6 +179,11 @@ h2{
 	width: 1200px;/*width: 980px;*/
 }
 
+.story .float-left h2 {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
 #guitarRow {
 	width: 900px;
 	margin-left: 40px;
@@ -163,9 +195,17 @@ h2{
 	width: 350px;	
 }
 
+.story .float-left {
+	padding-top: 30px;
+}
+
 #third img {
 	height: 567px;
 	width:	179px;
 	padding-left: 20px;
-	padding-right: 20px;
+	padding-right: 20px; 
+}
+
+#third img:hover {
+	box-shadow: 0px 0px 5px #000;
 }

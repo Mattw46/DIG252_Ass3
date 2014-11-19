@@ -20,16 +20,31 @@
         
 		<script type="text/javascript">
 		$j_min(document).ready(function(){
+			// Set initial height to window height
+			var windowHeight = $j_min(window).height();
+			$j_min('#intro').css("height", windowHeight);
+			$j_min('#third').css("height", windowHeight);
+		
+		
 			/* Code borrowed from http://ianlunn.co.uk/plugins/jquery-parallax/ */
-			$j_min('#nav').localScroll(800);
+			$j_min('#nav').localScroll(800); $j_min('#scrollIcon').localScroll(800);
 			//.parallax(xPosition, speedFactor, outerHeight) options:
 			//xPosition - Horizontal position of the element
 			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
 			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-			$j_min('#intro').parallax("50%", 0.1);
+			$j_min('#intro').parallax("50%", 0.1); 
 			$j_min('#second').parallax("50%", 0.1);
-			$j_min('.bg').parallax("50%", 0.4);
+			//$j_min('.bg').parallax("50%", 0.4);
 			$j_min('#third').parallax("50%", 0.3);
+
+			
+			
+			// resize window event
+			$j_min(window).resize(function() {
+				var windowHeight = $j_min(window).height();
+				$j_min('#intro').css("height", windowHeight);
+				$j_min('#third').css("height", windowHeight);
+			});
 
 			/* test area for hover pop up*/
 			
@@ -87,11 +102,18 @@
 	<div id="intro" style="background-position: 50% 0px;">
 		<div class="story">
 	    	<div class="float-left">
-			<h2>Choosing your first Guitar</h2>
-	        <p>Choosing your first guitar is a big decision and here at My First Guitar we understand. You need to decide what kind of music you want to play, do your research to find out what suits not just your music style but fits your style and makes the journey learning music easy.</p>
+				<h2>Choosing your first Guitar</h2>
+	        	<p>Choosing your first guitar is a big decision and here at My First Guitar we understand. You need to decide what kind of music you want to play, do your research to find out what suits not just your music style but fits your style and makes the journey learning music easy.</p>
             <p>Start your journey to becoming a guitarist by choosing from the guitars to find out more, hover over the guitar for a brief outline and choose the type you like, click the guitar for more information</p>
 	        </div>
 	    </div> <!--.story-->
+	    
+	    <div id="scrollIcon">
+	    	<a href="#second" title="Next Section">
+	    		<img src="images/icons/down.png" alt="scroll down" />
+	    		<p>SCROLL DOWN</p>
+	    	</a>
+	    </div>
 	</div> <!--#intro-->
 	
 	<div id="second" style="background-position: 50% 60px;">
@@ -99,6 +121,9 @@
 	    	<div class="float-right">
 	            <h2>How To Choose Your Guitar</h2>
 	            <p>Choosing your first guitar is a big decision, it can be detrimental to your success in learning to play the guitar. Choosing the correct guitar should allow you to get the sound and feel for the music you want to learn.</p>
+	            <p>There are many guitar types to choose from acoustic to hollow body electric such as the Gretsch to solid body electric. Just choosing from the solid body electric has so many options from
+	            	the iconic Fender stratocaster to the legendary Gibson Les Paul. Each has it's own properties that are best for certain types of music or particular playing styles.</p>
+	            <p>Just as important as the sound is comfort, you wont reach your goals as easily if it's to heavy, the neck is too wide or the frets too close. Thats what we are here for</p>
 	            <p>We make it easy to browse guitars, just scroll down and browse through main categories of guuitars and pick one that interests you. Click for more information. It's really that easy!</p>
 	        </div>
 	    </div> <!--.story-->
@@ -178,29 +203,6 @@
 		<script type="text/javascript">
 		$j_1_11_0(document).ready(function(){
             $j_1_11_0('.multiple-items').slick({
-            	/*centerMode: true,
-            	  centerPadding: '60px',
-            	  slidesToShow: 4,
-            	  responsive: [
-            	    {
-            	      breakpoint: 768,
-            	      settings: {
-            	        arrows: false,
-            	        centerMode: true,
-            	        centerPadding: '40px',
-            	        slidesToShow: 4
-            	      }
-            	    },
-            	    {
-            	      breakpoint: 480,
-            	      settings: {
-            	        arrows: false,
-            	        centerMode: true,
-            	        centerPadding: '40px',
-            	        slidesToShow: 1
-            	      }
-            	    }
-            	  ]*/
             	infinite: true,
             	  slidesToShow: 3,
             	  slidesToScroll: 3

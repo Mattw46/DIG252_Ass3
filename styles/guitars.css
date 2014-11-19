@@ -1,5 +1,5 @@
 body {
-	background: white; /* Research better background*/
+	background: white; 
 }
 
 #makeMeScrollable {
@@ -163,7 +163,7 @@ uncomment this part if you haven't added this code anywhere else
 	max-height: 92px;
 	padding-right: 0;
 
-	font-family: Courgette, sans-serif;
+	font-family: Helvetica, Arial, sans-serif; /* Recommended for accessibility - http://webaim.org/techniques/fonts/*//*font-family: Courgette, sans-serif;*/
 	font-size: 43px;
 	line-height: 46px;
 	color: #fff;
@@ -240,7 +240,8 @@ uncomment this part if you haven't added this code anywhere else
 	height: 100%;
 	width: 60px;
 	/* Change image to match style */
-	background: url(http://i1232.photobucket.com/albums/ff372/Marcin_Gil/magnific%20example/close.png) no-repeat center center;
+	/*background: url(http://i1232.photobucket.com/albums/ff372/Marcin_Gil/magnific%20example/close.png) no-repeat center center;*/
+	background: url(../fancybox/fancy_close.png) no-repeat center center;
 }
 
 /* Overlay fadeIn animation */
@@ -274,7 +275,8 @@ uncomment this part if you haven't added this code anywhere else
 /* Overlay controls */
 .mfp-example .mfp-arrow
 {	/* Change to match style */
-	background: url(http://i1232.photobucket.com/albums/ff372/Marcin_Gil/magnific%20example/arrows.png) no-repeat center 30px;
+	/*background: url(http://i1232.photobucket.com/albums/ff372/Marcin_Gil/magnific%20example/arrows.png) no-repeat center 30px;*/
+	background: url(../images/icons/arrows.png) no-repeat center 30px;
 }
 
 .mfp-example .mfp-arrow:hover

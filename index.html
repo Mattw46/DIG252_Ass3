@@ -6,61 +6,46 @@
 		<link href="./styles/homeStyle.css" rel="stylesheet" type="text/css">
 		<link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet">  <!-- Javascript & jQuery the Missing Manual -->
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/> <!-- http://kenwheeler.github.io/slick/ -->
-		<script type="text/javascript" src="./scripts/jquery.min.js"></script>
-		<script type="text/javascript">
-			var $j_min = jQuery.noConflict();
-		</script>
-        <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
         
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="./scripts/jquery.parallax-1.1.3.js"></script> <!-- http://ianlunn.co.uk/plugins/jquery-parallax/ -->
 		<script type="text/javascript" src="./scripts/jquery.localscroll-1.2.7-min.js"></script><!-- http://ianlunn.co.uk/plugins/jquery-parallax/ -->
-		<script type="text/javascript" src="./scripts/jquery.scrollTo-1.4.2-min.js"></script><!-- http://ianlunn.co.uk/plugins/jquery-parallax/ -->
-        
-        
-        
-		<script type="text/javascript">
-		$j_min(document).ready(function(){
-			// Set initial height to window height
-			var windowHeight = $j_min(window).height();
-			$j_min('#intro').css("height", windowHeight);
-			$j_min('#third').css("height", windowHeight);
+		<script type="text/javascript" src="./scripts/jquery.scrollTo.min.js"></script><!-- http://ianlunn.co.uk/plugins/jquery-parallax/ -->
 		
+        
+        <script type="text/javascript">
+		$(document).ready(function(){
+			// Set initial height to window height
+			var windowHeight = $(window).height();
+			$('#intro').css("height", windowHeight);
+			$('#third').css("height", windowHeight);
 		
 			/* Code borrowed from http://ianlunn.co.uk/plugins/jquery-parallax/ */
-			$j_min('#nav').localScroll(800); $j_min('#scrollIcon').localScroll(800);
-			//.parallax(xPosition, speedFactor, outerHeight) options:
-			//xPosition - Horizontal position of the element
-			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-			$j_min('#intro').parallax("50%", 0.1); 
-			$j_min('#second').parallax("50%", 0.1);
-			//$j_min('.bg').parallax("50%", 0.4);
-			$j_min('#third').parallax("50%", 0.3);
+			$('#nav').localScroll(800); $('#scrollIcon').localScroll(800);
+			$('#intro').parallax("50%", 0.1); 
+			$('#second').parallax("50%", 0.1);
+			$('#third').parallax("50%", 0.3);
 
-			
-			
 			// resize window event
-			$j_min(window).resize(function() {
-				var windowHeight = $j_min(window).height();
-				$j_min('#intro').css("height", windowHeight);
-				$j_min('#third').css("height", windowHeight);
+			$(window).resize(function() {
+				var windowHeight = $(window).height();
+				$('#intro').css("height", windowHeight);
+				$('#third').css("height", windowHeight);
 			});
-
-			/* test area for hover pop up*/
 			
-			$j_min('.tooltip').hide(); /* code borrowed from javascript & jQuery The Missing Manual*/
-			$j_min('.trigger').mouseover(function() {
+			$('.tooltip').hide(); /* code borrowed from javascript & jQuery The Missing Manual*/
+			$('.trigger').mouseover(function() {
 				var ttLeft,
 		   		ttTop,
-				$this=$j_min(this),
-				$tip = $j_min($this.attr('data-tooltip')),
+				$this=$(this),
+				$tip = $($this.attr('data-tooltip')),
 		    	triggerPos = $this.offset(),
 		    	triggerH = $this.outerHeight(),
 		    	triggerW = $this.outerWidth(),
 				tipW = $tip.outerWidth(),
 		    	tipH = $tip.outerHeight(),
-		    	screenW = $j_min(window).width(),
-				scrollTop = $j_min(document).scrollTop();
+		    	screenW = $(window).width(),
+				scrollTop = $(document).scrollTop();
 		
 				if (triggerPos.top - tipH - scrollTop > 0 ) {
 					ttTop = triggerPos.top - tipH - 10;
@@ -75,7 +60,6 @@
 					ttLeft = triggerPos.left;	
 				}
 		
-		
 				$tip
 		   		.css({
 					left : ttLeft ,
@@ -84,10 +68,10 @@
 		    		})
 					.fadeIn(200);
 			}); // end mouseover
-			$j_min('.trigger').mouseout(function () {
-				$j_min('.tooltip').fadeOut(200);
-			}); // end mouseout
-		})
+			$('.trigger').mouseout(function () {
+				$('.tooltip').fadeOut(200);
+			}); // end mouseout	
+		}); // end ready
 		</script>
 	</head>
 	
@@ -96,7 +80,6 @@
 		<li><a href="#intro" title="Next Section"><img src="./images/dot.png" alt="Link"></a></li>
 	    <li><a href="#second" title="Next Section"><img src="./images/dot.png" alt="Link"></a></li>
 	    <li><a href="#third" title="Next Section"><img src="./images/dot.png" alt="Link"></a></li>
-	    <!-- <li><a href="#fifth" title="Next Section"><img src="./images/dot.png" alt="Link"></a></li> -->
 	</ul>
 	
 	<div id="intro" style="background-position: 50% 0px;">
@@ -132,8 +115,7 @@
 	
 	<div id="third" style="background-position: 50% 145px;">
 		<div class="story">
-	    	<div > <!--class="float-left"-->
-            	<!-- Insert carousel here -->
+	    	<div > 
                 <div id="guitarRow" class="multiple-items">
                 	<div>
                 		<span class="trigger" data-tooltip="#tip1">
@@ -170,18 +152,28 @@
                     	</a>
                     	</span>
                     </div>
-	        	</div>
-                
+	        	</div>   
 	    	</div> <!--.story-->
 		</div> <!--#third-->
+
+		<!-- Slick library sourced from http://kenwheeler.github.io/slick/ -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+            $('.multiple-items').slick({
+            	infinite: true,
+            	  slidesToShow: 3,
+            	  slidesToScroll: 3
+            }); // end of slick
+        }); // end document ready
+    	</script>
 	
 		<!-- fancybox code sourced from "Javascript & jQuery The Missing Manual" exercise examples -->
 		<script src="./scripts/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript">
-			var $j_1_7_2 = jQuery.noConflict();
-		</script>
 		<script src="fancybox/jquery.fancybox-1.3.4.min.js"></script>
 		<script>
+			var $j_1_7_2 = jQuery.noConflict();
 			$j_1_7_2(document).ready(function() {
 				$j_1_7_2('.iframe').fancybox({
 					width: '90%',
@@ -191,39 +183,7 @@
 			}); // end ready
 		</script>
 
-		<!--<div id="window-resizer-tooltip" style="display: none;"><a href="http://ianlunn.co.uk/plugins/jquery-parallax/#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1366</span> x <span class="tooltipHeight" id="winHeight">840</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1366</span> x <span class="tooltipHeight" id="vpHeight">768</span></div>-->
-
-		<!-- Slick library sourced from http://kenwheeler.github.io/slick/ -->
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript">
-			var $j_1_11_0 = jQuery.noConflict();
-		</script>
-		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script type="text/javascript" src="slick/slick.min.js"></script>
-		<script type="text/javascript">
-		$j_1_11_0(document).ready(function(){
-            $j_1_11_0('.multiple-items').slick({
-            	infinite: true,
-            	  slidesToShow: 3,
-            	  slidesToScroll: 3
-            }); // end of slick
-        }); // end document ready
-    	</script>
-
-		<div class="tooltip" id="tip1">
-       		<h6>Gibson Les Paul</h6><p class="guitarCaption">Click For More</p>
-    	</div>
-		<div class="tooltip" id="tip2">
-  			<h6>PRS Guitars</h6><p class="guitarCaption">Click For More</p>
-  		</div>
-  		<div class="tooltip" id="tip3">
-       		<h6>Gretsch Guitars</h6><p class="guitarCaption">Click For More</p>
-    	</div>
-		<div class="tooltip" id="tip4">
-  			<h6>Gibson SG</h6><p class="guitarCaption">Click For More</p>
-  		</div>
-  		<div class="tooltip" id="tip5">
-  			<h6>Fender Stratocaster</h6><p class="guitarCaption">Click For More</p>
+		
   		</div>
 	</body>
 </html>
